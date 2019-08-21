@@ -22,7 +22,7 @@ RUN apk add --update  && \
     apk del curl && \
     rm -rf /tmp/* /var/cache/apk/*
 
-COPY target/ROOT.war ${TOMCAT_HOME}/webapps/
+COPY ROOT.war ${TOMCAT_HOME}/webapps/
 
 
 
