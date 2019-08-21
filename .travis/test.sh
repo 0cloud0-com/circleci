@@ -1,5 +1,6 @@
 VERSION=$(echo ROOT.war | md5sum | awk '{ print $1 }')
 
+pwd
 echo ROOT.war | md5sum
 
 echo $VERSION
