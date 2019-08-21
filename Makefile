@@ -1,5 +1,5 @@
 IMAGE := 0cloud0/private
-VERSION:= $(echo -n ROOT.war | md5sum)
+VERSION:= $(echo -n ROOT.war | md5sum | awk '{ print $1 }')
 
 test:
 	false
