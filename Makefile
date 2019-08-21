@@ -1,13 +1,11 @@
 IMAGE := 0cloud0/private
-VERSION:= $(echo -n ROOT.war | md5sum | awk '{ print $1 }')
+VERSION:= $(echo ROOT.war | md5sum | awk '{ print $1 }')
 
 test:
 	false
 
 image:
-        echo ${IMAGE}
-        echo ${VERSION}
-	docker build -t 3 .
+	docker build -t 0cloud0/private:${VERSION} .
 	docker tag ${IMAGE}:${VERSION} ${IMAGE}:latest
 
 push-image:
