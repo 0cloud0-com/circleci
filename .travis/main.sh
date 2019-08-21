@@ -3,8 +3,8 @@
 set -o errexit
 
 main() {
-  setup_dependencies
-  update_docker_configuration
+ # setup_dependencies
+ # update_docker_configuration
 
   echo "SUCCESS:
   Done! Finished setting up Travis machine.
