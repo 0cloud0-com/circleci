@@ -5,11 +5,10 @@ test:
 	false
 
 image:
-	docker build -t 0cloud0/private:${VERSION} .
-	docker tag ${IMAGE}:${VERSION} ${IMAGE}:latest
+	docker ps
 
 push-image:
-	docker push ${IMAGE}:${VERSION}
+	docker ps
 
 
 .PHONY: image push-image test
