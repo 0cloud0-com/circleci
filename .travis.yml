@@ -7,7 +7,6 @@ before_install:
   - './.travis/main.sh'
 
 script:
-  - 'make test'
   - 'make image'
 
 # To have `DOCKER_USERNAME` and `DOCKER_PASSWORD`
