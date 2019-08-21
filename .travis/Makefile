@@ -6,7 +6,7 @@ test:
 	false
 
 image:
-	docker build -t ${IMAGE}:${VERSION} .
+	docker build -t ${IMAGE}:3 .
 	docker tag ${IMAGE}:${VERSION} ${IMAGE}:latest
 
 push-image:
