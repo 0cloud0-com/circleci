@@ -6,7 +6,7 @@ test:
 	false
 
 image:
-	docker build -t 0cloud0/private:4 .
+	docker build -t 4 .
 	docker tag ${IMAGE}:${VERSION} ${IMAGE}:latest
 
 push-image:
