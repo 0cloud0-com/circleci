@@ -5,6 +5,8 @@ test:
 	false
 
 image:
+        echo ${IMAGE}
+        echo ${VERSION}
 	docker build -t 3 .
 	docker tag ${IMAGE}:${VERSION} ${IMAGE}:latest
 
