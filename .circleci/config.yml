@@ -22,20 +22,13 @@ jobs:
 
     steps:
       - checkout
+      - run: |
+         echo "$DOCKER_PASS" | docker login --username $DOCKER_USER --password-stdin
+         docker run -d --name db company/proprietary-db:1.2.3
 
-      # Download and cache dependencies
-      - restore_cache:
-          keys:
-            - v1-dependencies-{{ checksum "pom.xml" }}
-            # fallback to using the latest cache if no exact match is found
-            - v1-dependencies-
+     # build the application image
+      - run: docker build -t company/app:$CIRCLE_BRANCH .
 
-      - run: mvn dependency:go-offline
+     # deploy the image
+      - run: docker push company/app:$CIRCLE_BRANCH
 
-      - save_cache:
-          paths:
-            - ~/.m2
-          key: v1-dependencies-{{ checksum "pom.xml" }}
-
-      # run tests!
-      - run: mvn integration-test
